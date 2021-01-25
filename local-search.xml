@@ -8,9 +8,65 @@
     <link href="/2021/01/25/hello-world/"/>
     <url>/2021/01/25/hello-world/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></div></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo server<br></code></pre></div></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo generate<br></code></pre></div></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></div></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo搭建博客常见问题及解决</title>
+    <link href="/2021/01/24/Hexo%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/"/>
+    <url>/2021/01/24/Hexo%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3/</url>
+    
+    <content type="html"><![CDATA[<hr><h5 id="1-Q：Hexo更换新主题无法成功安装，出错。"><a href="#1-Q：Hexo更换新主题无法成功安装，出错。" class="headerlink" title="1.Q：Hexo更换新主题无法成功安装，出错。"></a>1.<strong>Q</strong>：Hexo更换新主题无法成功安装，出错。</h5><p>   <strong>A</strong>：首先，确保新主题在hexo生成的站点文件的themes文件夹下。其次，确保站点配置文件<em>_config.yml</em>中的theme：之后的字段名字和你下载主题库的文件夹名字相同。</p><h5 id="2-Q：Hexo静态页面报错，丢失样式，并提示"><a href="#2-Q：Hexo静态页面报错，丢失样式，并提示" class="headerlink" title="2.Q：Hexo静态页面报错，丢失样式，并提示"></a>2.<strong>Q</strong>：Hexo静态页面报错，丢失样式，并提示"{% extends ‘_layout.swig‘ %} {% import ‘_macro/post.swig‘ as post_template %}" </h5><p>​    <strong>A</strong>：新版的hexo默认swig未安装，应该重新安装</p><figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs git">npm i hexo-renderer-swig<br></code></pre></div></td></tr></table></figure><h5 id="3-Q：Hexo静态页面本地版式没问题，deploy到github上出现乱版。"><a href="#3-Q：Hexo静态页面本地版式没问题，deploy到github上出现乱版。" class="headerlink" title="3.Q：Hexo静态页面本地版式没问题，deploy到github上出现乱版。"></a>3.<strong>Q</strong>：Hexo静态页面本地版式没问题，deploy到github上出现乱版。</h5><p>​    <strong>A</strong>：尝试将hexo缓存区清空后重试</p><figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs git">hexo clean<br></code></pre></div></td></tr></table></figure><a id="more"></a><h5 id="4-Q：Hexo备份"><a href="#4-Q：Hexo备份" class="headerlink" title="4.Q：Hexo备份"></a>4.<strong>Q</strong>：Hexo备份</h5><p>​    <strong>A</strong>：hexo是在本地生成页面后deploy到Github page或者Gitee上的，所以push上去的文件不包括一些源文件，需要备份时可以在github新建一个branch hexo，然后将整个hexo push至github上托管即可。</p><h5 id="5-Q：Hexo菜单栏图标未启用（以next主题为例"><a href="#5-Q：Hexo菜单栏图标未启用（以next主题为例" class="headerlink" title="5.Q：Hexo菜单栏图标未启用（以next主题为例)"></a>5.<strong>Q</strong>：Hexo菜单栏图标未启用（以<strong>next</strong>主题为例)</h5><p>​    <strong>A</strong>：检查自己的站点是否运行在根目录下，运行在子目录下要删除下述代码中的’/‘。(注意，<strong>YAML</strong>语言冒号后面都要有空格，否则会出错；而且/后面也不能有空格，否则会报错，5.0之后的版本已经测试过确实如此)’||’后面表示启用home对应的图标，没有||也是不行的，同时注意<em>menu_icons:</em>菜单栏图标对应关系是否出错。</p><figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">menu:</span><br>  <span class="hljs-attr">home:</span> <span class="hljs-string">/||home</span><br></code></pre></div></td></tr></table></figure><h5 id="6-Q：每次撰写新文章时要配置tag、categories等信息很麻烦。"><a href="#6-Q：每次撰写新文章时要配置tag、categories等信息很麻烦。" class="headerlink" title="6.Q：每次撰写新文章时要配置tag、categories等信息很麻烦。"></a>6.<strong>Q</strong>：每次撰写新文章时要配置tag、categories等信息很麻烦。</h5><p>​    <strong>A</strong>：打开Hexo中生成的<strong>scaffold</strong>文档，修改里面三种模板文件draft、page、post的模板，这样以后用下述代码</p><figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs git">hexo new post &quot;&lt;文章标题&gt;&quot;<br></code></pre></div></td></tr></table></figure><p>生成文章之后，会自动生成你配置好的md文件，以post为例，可以采用如下模板，模板上下的两条横杆不可以省略：<br><figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;<br><span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;<br><span class="hljs-attr">top:</span> <span class="hljs-literal">false</span><br><span class="hljs-attr">cover:</span> <span class="hljs-literal">false</span><br><span class="hljs-attr">password:</span><br><span class="hljs-attr">toc:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">mathjax:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">summary:</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-attr">categories:</span><br><span class="hljs-meta">---</span><br></code></pre></div></td></tr></table></figure></p><h5 id="7-Q：出现Template-render-error-unknown-path-报错或者出现err-Error-Nunjucks-Error"><a href="#7-Q：出现Template-render-error-unknown-path-报错或者出现err-Error-Nunjucks-Error" class="headerlink" title="7.Q：出现Template render error: (unknown path)报错或者出现err:Error [Nunjucks Error]"></a>7.<strong>Q</strong>：出现Template render error: (unknown path)报错或者出现err:Error [Nunjucks Error]</h5><p>​    <strong>A</strong>：问题在于出现了Hexo无法识别的内容，比如问题6中出现的'{{'以及'}}'或者'{% %}'，如果它不在代码块中，且没被注释，就会报错。还有一种可能就是5中所提到的，YAML代码冒号后面空格未加，也有可能报错。第一种可能的解决办法就是，增加两行识别代码或者将其注释掉。</p><figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml">&#123;<span class="hljs-string">%</span> <span class="hljs-string">raw</span> <span class="hljs-string">%</span>&#125;<br><span class="hljs-string">识别报错部分</span><br>&#123;<span class="hljs-string">%</span> <span class="hljs-string">endraw</span> <span class="hljs-string">%</span>&#125;<br></code></pre></div></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>代码</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>代码</tag>
+      
+      <tag>问题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>时间的流逝</title>
+    <link href="/2021/01/23/%E6%97%B6%E9%97%B4%E7%9A%84%E6%B5%81%E9%80%9D/"/>
+    <url>/2021/01/23/%E6%97%B6%E9%97%B4%E7%9A%84%E6%B5%81%E9%80%9D/</url>
+    
+    <content type="html"><![CDATA[<hr><p>​       虽然我们无时无刻不在经历着时间的流逝，但是习以为常的我们可能却很容易忽视这一点，时间就悄悄地从缝隙中一点一滴的溜走了。人们对时间感知的相对性就很强，有些潜心科研的人甚至会忘却周围、忘却时间。要想准确的感知时间，感知一天中我们花了多少时间在某些事情上，我们就需要去刻意的记录它，记录这一过程。</p><p>​       信息时代做到这一点越发容易了，但也仅仅是指我们刻意去记录时才是如此。各种app可以方便地记录你手头上所做的任何一件事——精确到分秒，只要你开始连续做这件事时按下app中自带的计时器即可。一开始记录者可能会惊叹自己想象中的自己和实际偏差之大，其实自己对时间的掌控是渺小的，但令人高兴的是这一切都能改变，俗话说“东隅已逝桑榆非晚”也是一种对前途的乐观与豁达。<br><a id="more"></a><br>​        当然，仔细一想，为何这近年来时间管理app越发火了，可以说是市场需求决定的，步入信息时代，人们反而感觉自己对时间的掌控越来越力不从心。所以一个有趣的现象就是我们更方便的能管理时间了，但其实这个优点是由于我们越来越不善于管理时间而衍生出来的优点。纵观现在的app也不难发现其中的猫腻，app首先肯定要能吸引潜在用户去使用，而且也尽量需要具备一定粘度。最常用的一种工业设计就是“流”设计，就像流水线一样一个接着一个，视频软件里的流设计让你不知不觉的划过很多其实你本来并不需要观看的视频，各种评论区的下拉菜单也让各位读者沉浸在信息爆炸中浑然不知时间的飞逝。</p><p>​        这种信息陷阱无处不在，似乎防不胜防，但破局之道也不是没有。二维的世界只能看到三维的阴影，同样的，我们只有从虚拟的“低维世界”脱身去现实的“高维世界”，才能不被信息茧房所束缚。每当信息接踵而来时，我们不应该应激的去滑动那无尽的滑动窗口，而是应该站在更高的维度，作为一个真实世界的自己，来审问自己——到底我的目的是什么？是否花了不必要的时间？自己还有什么需要去做的吗？保持清醒的自己，就是对虚拟世界信息垃圾陷阱的一次降维打击，效果往往能出乎人的意料。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>杂谈</tag>
+      
+      <tag>方法论</tag>
+      
+      <tag>思考</tag>
+      
+    </tags>
     
   </entry>
   
