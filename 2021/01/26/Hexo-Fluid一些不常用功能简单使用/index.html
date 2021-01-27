@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Novpath">
   <meta name="keywords" content="">
-  <title>Hexo搭建博客常见问题及解决 - 从一到∞学习笔记</title>
+  <title>Hexo-Fluid一些不常用功能简单使用 - 从一到∞学习笔记</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -162,7 +162,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hexo搭建博客常见问题及解决">
+            <span class="h2" id="subtitle" title="Hexo-Fluid一些不常用功能简单使用">
               
             </span>
 
@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-01-24 10:39" pubdate>
-        2021年1月24日 上午
+      <time datetime="2021-01-26 15:19" pubdate>
+        2021年1月26日 下午
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      631 字
+      704 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      8
        分钟
     </span>
   
@@ -224,27 +224,79 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo搭建博客常见问题及解决</h1>
+            <h1 style="display: none">Hexo-Fluid一些不常用功能简单使用</h1>
             
             <div class="markdown-body">
-              <hr>
-<h4 id="1-Q：Hexo更换新主题无法成功安装，出错。"><a href="#1-Q：Hexo更换新主题无法成功安装，出错。" class="headerlink" title="1.Q：Hexo更换新主题无法成功安装，出错。"></a>1.<strong>Q</strong>：Hexo更换新主题无法成功安装，出错。</h4><p>   <strong>A</strong>：首先，确保新主题在hexo生成的站点文件的themes文件夹下。其次，确保站点配置文件<em>_config.yml</em>中的theme：之后的字段名字和你下载主题库的文件夹名字相同。</p>
-<h4 id="2-Q：Hexo静态页面报错，丢失样式，并提示"><a href="#2-Q：Hexo静态页面报错，丢失样式，并提示" class="headerlink" title="2.Q：Hexo静态页面报错，丢失样式，并提示"></a>2.<strong>Q</strong>：Hexo静态页面报错，丢失样式，并提示"{% extends ‘_layout.swig‘ %} {% import ‘_macro/post.swig‘ as post_template %}" </h4><p>​    <strong>A</strong>：新版的hexo默认swig未安装，应该重新安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs git">npm i hexo-renderer-swig<br></code></pre></div></td></tr></table></figure>
-<h4 id="3-Q：Hexo静态页面本地版式没问题，deploy到github上出现乱版。"><a href="#3-Q：Hexo静态页面本地版式没问题，deploy到github上出现乱版。" class="headerlink" title="3.Q：Hexo静态页面本地版式没问题，deploy到github上出现乱版。"></a>3.<strong>Q</strong>：Hexo静态页面本地版式没问题，deploy到github上出现乱版。</h4><p>​    <strong>A</strong>：尝试将hexo缓存区清空后重试</p>
-<figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs git">hexo clean<br></code></pre></div></td></tr></table></figure>
+              <p>Hexo-Fluid本身集成了一些有趣的功能，但是使用比较少，本文旨在简述这些功能的简单用法，也避免之后遗忘等问题。</p>
 <a id="more"></a>
-<h4 id="4-Q：Hexo备份"><a href="#4-Q：Hexo备份" class="headerlink" title="4.Q：Hexo备份"></a>4.<strong>Q</strong>：Hexo备份</h4><p>​    <strong>A</strong>：hexo是在本地生成页面后deploy到Github page或者Gitee上的，所以push上去的文件不包括一些源文件，需要备份时可以在github新建一个branch hexo，然后将整个hexo push至github上托管即可。</p>
-<h4 id="5-Q：Hexo菜单栏图标未启用（以next主题为例"><a href="#5-Q：Hexo菜单栏图标未启用（以next主题为例" class="headerlink" title="5.Q：Hexo菜单栏图标未启用（以next主题为例)"></a>5.<strong>Q</strong>：Hexo菜单栏图标未启用（以<strong>next</strong>主题为例)</h4><p>​    <strong>A</strong>：检查自己的站点是否运行在根目录下，运行在子目录下要删除下述代码中的’/‘。(注意，<strong>YAML</strong>语言冒号后面都要有空格，否则会出错；而且/后面也不能有空格，否则会报错，5.0之后的版本已经测试过确实如此)’||’后面表示启用home对应的图标，没有||也是不行的，同时注意<em>menu_icons:</em>菜单栏图标对应关系是否出错。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">menu:</span><br>  <span class="hljs-attr">home:</span> <span class="hljs-string">/||home</span><br></code></pre></div></td></tr></table></figure>
-<h4 id="6-Q：每次撰写新文章时要配置tag、categories等信息很麻烦。"><a href="#6-Q：每次撰写新文章时要配置tag、categories等信息很麻烦。" class="headerlink" title="6.Q：每次撰写新文章时要配置tag、categories等信息很麻烦。"></a>6.<strong>Q</strong>：每次撰写新文章时要配置tag、categories等信息很麻烦。</h4><p>​    <strong>A</strong>：打开Hexo中生成的<strong>scaffold</strong>文档，修改里面三种模板文件draft、page、post的模板，这样以后用下述代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs git">hexo new post &quot;&lt;文章标题&gt;&quot;<br></code></pre></div></td></tr></table></figure>
-<p>生成文章之后，会自动生成你配置好的md文件，以post为例，可以采用如下模板，模板上下的两条横杆不可以省略：<br>
-<figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> &#123;&#123; <span class="hljs-string">title</span> &#125;&#125;<br><span class="hljs-attr">date:</span> &#123;&#123; <span class="hljs-string">date</span> &#125;&#125;<br><span class="hljs-attr">top:</span> <span class="hljs-literal">false</span><br><span class="hljs-attr">cover:</span> <span class="hljs-literal">false</span><br><span class="hljs-attr">password:</span><br><span class="hljs-attr">toc:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">mathjax:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">summary:</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-attr">categories:</span><br><span class="hljs-meta">---</span><br></code></pre></div></td></tr></table></figure>
-</p>
-<h4 id="7-Q：出现Template-render-error-unknown-path-报错或者出现err-Error-Nunjucks-Error"><a href="#7-Q：出现Template-render-error-unknown-path-报错或者出现err-Error-Nunjucks-Error" class="headerlink" title="7.Q：出现Template render error: (unknown path)报错或者出现err:Error [Nunjucks Error]"></a>7.<strong>Q</strong>：出现Template render error: (unknown path)报错或者出现err:Error [Nunjucks Error]</h4><p>​    <strong>A</strong>：问题在于出现了Hexo无法识别的内容，比如问题6中出现的'{{'以及'}}'或者'{% %}'，如果它不在代码块中，且没被注释，就会报错。还有一种可能就是5中所提到的，YAML代码冒号后面空格未加，也有可能报错。第一种可能的解决办法就是，增加两行识别代码或者将其注释掉。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml">&#123;<span class="hljs-string">%</span> <span class="hljs-string">raw</span> <span class="hljs-string">%</span>&#125;<br><span class="hljs-string">识别报错部分</span><br>&#123;<span class="hljs-string">%</span> <span class="hljs-string">endraw</span> <span class="hljs-string">%</span>&#125;<br></code></pre></div></td></tr></table></figure>
+<h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><p>​    Fluid主题内置了脚注语法，有时方便引用的一些写法，脚注一般写在文末更规范美观。</p>
+<p>栗子：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">脚注，是可以附在文章页面的最底端的，对文本加以补充说明的注文<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="参考资料-百度百科
+">[1]</span></a></sup>。<br>[<span class="hljs-symbol">^1</span>]:<span class="hljs-link">参考资料-百度百科</span><br></code></pre></div></td></tr></table></figure>
+<p>效果：</p>
+<p>​    脚注，是可以附在文章页面的最底端的，对文本加以补充说明的注文<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="参考资料-百度百科
+">[1]</span></a></sup>。(尾注自动生成至文末)</p>
+<h2 id="Tag标签"><a href="#Tag标签" class="headerlink" title="Tag标签"></a>Tag标签</h2><h3 id="便签"><a href="#便签" class="headerlink" title="便签"></a>便签</h3><p>​        两种方式使用Tag插件，在markdown中使用如下代码</p>
+<p>栗子一：使用markdown特殊代码段，注意两个特殊代码需要单独成一行</p>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">&#123;% note success %&#125;<br>文字 或者 <span class="hljs-code">`markdown`</span> 均可<br>&#123;% endnote %&#125;<br></code></pre></div></td></tr></table></figure>
+<p>栗子二：使用HTML形式</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-primary&quot;</span>&gt;</span>标签<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p>示栗：</p>
+<div class="note note-primary">
+            <p>primary</p>
+          </div>
+<div class="note note-secondary">
+            <p>secondary</p>
+          </div>
+<div class="note note-success">
+            <p>success</p>
+          </div>
+<p class="note note-danger">danger</p>
+<p class="note note-warning">warning</p>
+<p class="note note-info">info</p>
+<p class="note note-light">light</p>
 
+<h3 id="行内标签"><a href="#行内标签" class="headerlink" title="行内标签"></a>行内标签</h3><p>栗子一：使用markdown语法，加标签那段话不能以@开头</p>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">这段话第十个字之后要&#123;% label primary @加标签 %&#125;啦！<br></code></pre></div></td></tr></table></figure>
+<p>这段话第十个字之后要<span class="label label-primary">加标签</span>啦！     ←效果</p>
+<p>栗子二：使用HTML形式</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html">这段话第十个字之后要<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;label label-warning&quot;</span>&gt;</span>加标签<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>啦！<br></code></pre></div></td></tr></table></figure>
+<p>这段话第十个字之后要<span class="label label-warning">加标签</span>啦！   ←效果</p>
+<h3 id="勾选框"><a href="#勾选框" class="headerlink" title="勾选框"></a>勾选框</h3><p>在markdown后面加上下述代码使用Checkbox</p>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">&#123;% cb text, checked?, incline? %&#125;<br></code></pre></div></td></tr></table></figure>
+<p>text：显示的文字</p>
+<p>checked：默认是否勾选，默认false</p>
+<p>incline：是否内联(内联元素不会独占一行)，默认false</p>
+<p>示栗：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">&#123;% cb 普通示例 %&#125;<br><br>&#123;% cb 默认选中, true %&#125;<br><br>&#123;% cb 内联示例, false, true %&#125; 后面文字不换行<br><br>&#123;% cb false %&#125; 也可以只传入一个参数，文字写在后边（这样不支持外联)<br></code></pre></div></td></tr></table></figure>
+<div>
+            <input type="checkbox" disabled >普通示例
+          </div>
+<div>
+            <input type="checkbox" disabled checked="checked">默认选中
+          </div>
+<div>
+<span>
+            <input type="checkbox" disabled >内联示例
+          </span><span><input type="checkbox" disabled >也可以只传入一个参数，文字写在后边（这样不支持外联) </span>
+
+</div>
+
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><p>可以在markdown中加入如下代码来使用Button：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">&#123;% btn url, text, title %&#125;<br></code></pre></div></td></tr></table></figure>
+<p>也可以使用HTML形式</p>
+<figure class="highlight html"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;title&quot;</span>&gt;</span>text<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<p>url：跳转链接</p>
+<p>text：显示文字</p>
+<p>title：鼠标悬停于button时显示的文字</p>
+<a class="btn" href="https://github.com/novpath"  title="点击进入我的github主页" target="_blank">我是按钮</a>   
+<h3 id="组图"><a href="#组图" class="headerlink" title="组图"></a>组图</h3><p>该功能以实现多张图片按一定布局组合显示。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs markdown">&#123;% gi total n1-n2-... %&#125;<br>  ![](url)<br>  ![](url)<br>  ![](url)<br>  ![](url)<br>  ![](url)<br>&#123;% endgi %&#125;<br></code></pre></div></td></tr></table></figure>
+<p>total：图片总数量，对应中间包含的图片 url 数量<br>n1-n2-…：每行的图片数量，可以省略，默认单行最多 3 张图，求和必须相等于 total，否则按默认样式</p>
+<p>效果：</p>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/avatar.png" srcset="/img/loading.gif" alt="图片1"></div><div class="group-image-wrap"><img src="/img/avatar.png" srcset="/img/loading.gif" alt="图片2"></div><div class="group-image-wrap"><img src="/img/avatar.png" srcset="/img/loading.gif" alt="图片3"></div></div></div>
+<h2 id="LaTeX-数学公式"><a href="#LaTeX-数学公式" class="headerlink" title="LaTeX 数学公式"></a>LaTeX 数学公式</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>参考资料-百度百科
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
@@ -278,18 +330,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/01/25/hello-world/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/01/23/%E6%97%B6%E9%97%B4%E7%9A%84%E6%B5%81%E9%80%9D/">
-                        <span class="hidden-mobile">时间的流逝</span>
+                      <a href="/2021/01/25/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -508,6 +554,13 @@
 
 
 
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
 
 
 
