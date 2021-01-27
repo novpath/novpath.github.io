@@ -1,0 +1,33 @@
+name: CI
+on:
+  push:
+    branches:
+      - fluid
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 读取分支
+        uses: actions/checkout@v2
+
+      - name: 安装依赖
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: 清除Hexo缓存
+        uses: heowc/action-hexo@main
+        with:
+          args: clean
+
+      - name: 生成Hexo静态页面
+        uses: heowc/action-hexo@main
+        with:
+          args: generate
+
+      - name: 部署到master分支
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.HEXO_CITOKEN }}
+          external_repository: novpath/novpath.github.io
+          publish_branch: master
+          publish_dir: ./public
