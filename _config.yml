@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 从一到∞学习札记
+title: 从一到∞学习笔记
 subtitle: '捕捉转瞬即逝的思维火花'
 description: ''
 keywords:
@@ -96,7 +96,45 @@ exclude:
 ignore:
 
 # Hexo-all-minifier improve the theme performance
-all_minifier: true
+## https://github.com/chenzhutian/hexo-all-minifier
+## all_minifier: true
+#--------------------------------------------
+js_concator:
+  enable: false
+  bundle_path: '/js/bundle.js'
+  front: false
+  silent: false
+
+html_minifier:
+  enable: true
+  ignore_error: false
+  silent: false
+  exclude:
+
+css_minifier:
+  enable: true
+  silent: false
+  exclude: 
+    - '*.min.css'
+
+js_minifier:
+  enable: true
+  mangle: true
+  silent: false
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'
+
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+  silent: false
+#--------------------------------------------
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
