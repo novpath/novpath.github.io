@@ -27,7 +27,8 @@ jobs:
       - name: 部署到master分支
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.HEXO_CITOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_FLUID_KEY }}
+          #personal_token: ${{ secrets.HEXO_CITOKEN }}
           external_repository: novpath/novpath.github.io
           publish_branch: master
           publish_dir: ./public
