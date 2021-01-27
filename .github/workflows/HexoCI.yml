@@ -26,7 +26,10 @@ jobs:
     - name: Setup Hexo Dependencies
       run: |
         npm install hexo-cli -g
-    
+        hexo init
+        npm install
+      env:
+        CI: true
     - name: Setup Deploy Private Key
       env:
         HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
