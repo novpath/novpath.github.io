@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 切换分支
+      - name: 查询分支
         uses: actions/checkout@v2
 
       - name: Setup Node.js 10.x 
@@ -34,6 +34,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.HEXO_CITOKEN }}
-          external_repository: novpath/novpath.github.io
+          external_repository: novpath/novpath.github.io/tree/fluid
           publish_branch: master
           publish_dir: ./public
