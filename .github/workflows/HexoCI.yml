@@ -34,6 +34,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.HEXO_CITOKEN }}
-          external_repository: novpath/novpath.github.io/tree/fluid
+          external_repository: novpath/novpath.github.io
           publish_branch: master
           publish_dir: ./public
