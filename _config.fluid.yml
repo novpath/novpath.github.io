@@ -181,7 +181,7 @@ color:
   # 主面板背景色
   # Color of main board
   board_color: "#fff"
-  board_color_dark: "#252d38"
+  board_color_dark: "#252d38" #282c34代码块颜色
 
 # 主题字体配置
 # Font

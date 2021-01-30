@@ -8,6 +8,7 @@ categories:
   - [代码, 博客相关]
 sticky: false
 mermaid: true
+math: true
 date: 2021-01-26 15:19:48
 ---
 
@@ -170,6 +171,51 @@ n1-n2-...：每行的图片数量，可以省略，默认单行最多 3 张图�
 
 {% endgi %}
 
-## LaTeX 数学公式
+## LaTeX 数学公式显示测试
 
-### 运算符
+$$\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} \equiv 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }$$
+
+## Mermaid组图显示测试
+
+### 语法
+
+```markdown
+{% mermaid %}
+Mermaid语句
+{% endmermaid %}
+或者
+​```mermaid
+代码块……
+```
+
+
+
+### 流程图
+
+{% mermaid %}
+
+graph LR;   
+
+A-->B;    
+
+B-->C;    
+
+C-->D;    
+
+D-->E;    
+
+{% endmermaid %}
+
+### 甘特图
+
+```mermaid
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram to mermaid
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+```
