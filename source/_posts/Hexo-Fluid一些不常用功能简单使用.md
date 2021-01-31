@@ -3,7 +3,7 @@ title: Hexo-Fluid一些不常用功能简单使用
 toc: true
 tags:
   - 代码
-  - 问题
+  - Hexo
 categories:
   - [代码, 博客相关]
 sticky: false
