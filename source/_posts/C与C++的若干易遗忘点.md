@@ -78,4 +78,92 @@ date: 2021-02-08 18:51:49
 
 14. 常见输出格式
 
+    (1)%.mf ：让浮点数保留m位小数输出（规则为四舍六入五成双）
     
+    (2)%md ：以m位进行对齐输出，高位用空格填充。
+    
+    (3)%0md ：以m位进行对齐输出，高位用0填充。
+    
+15. getchar和putchar用来输入和输出键盘上键入的**单个字符**，getchar可以识别空白符（换行符及空格）。
+
+16. 常用math函数
+
+    (1)绝对值函数：fabs(double x)
+
+    (2)向下取整及向上取整函数：floor(double x)和ceil(double x)
+
+    (3)幂函数：pow(double r, double x)
+
+    (4)算术平方根函数：sqrt(double x)
+
+    (5)以**自然对数为底**的对数函数：log(double x)
+
+    (6)三角函数（单位**弧度制**）：sin(double x)、cos(double x)、tan(double x)
+
+    (7)四舍五入函数：round(double x)
+
+17. switch语句：分支条件较多时比较适用
+
+    case间不加break，则会按由上至下的顺序依次执行语句
+
+    ```c
+    switch(表达式){
+        case 常量表达式1:
+            ...
+            break;
+        case 常量表达式2:
+            ...
+            break;
+         .
+         .
+         .
+        case 常量表达式n:
+            ...
+            break;
+        default:
+            ...
+    }
+    ```
+
+18. break和continue的区别：break跳过当前作用的整个循环，continue跳过当前循环的一轮。
+
+19. C99支持数组大小下标定义时用变量，一般来说数组大小必须是整型常量。
+
+20. memset函数（对数组中的每一个元素赋予相同的值，建议赋0或-1）
+
+    ```c++
+    #include<cstring>
+    memset(数组名, 0, sizeof(数组名) )
+    memset(数组名, -1, sizeof(数组名) )
+    ```
+
+21. 字符数组允许直接**赋值字符串**来初始化，但**其他位置不允许**。
+
+    ```c++
+    //普通初始化
+    char str[15] = {'H', 'e', 'l', 'l', 'o'};
+    //直接赋值字符串
+    char str[15] = "Hello";
+    ```
+
+22. gets输入字符串，puts输出字符串。gets以换行符\n作为输入结束标志，scanf完一个整数后，如果要使用gets需要先用getchar接收整数后的换行符，然后将其存放于一个一维数组中。puts将一维数组的内容在界面上输出，然后输出一个换行符。
+
+23. 每个一维数组的结尾都有一个**空字符\0**表示存放字符串的结尾。
+
+24. 常用的string函数。
+
+    ```c++
+    #include<string.h>
+    int main(){
+        char str1[10] = "Hi";
+        char str2[10] = "nihao";
+        int len = strlen(str1);        // len = 2
+        int cmp = strcmp(str1, str2);  // cmp < 0,说明前者字典序更小
+        strcat(str1, str2);            // str1 = "Hinihao"
+        strcpy(str1, str2);            // str1 = "nihao"
+        return 0;
+    }
+    ```
+
+25. 
+
