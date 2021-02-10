@@ -3,6 +3,7 @@ title: C与C++的若干易遗忘点
 toc: true
 tags:
   - 代码
+  - 语言
   - C
   - C++
 categories:
