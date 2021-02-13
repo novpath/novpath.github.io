@@ -166,5 +166,47 @@ date: 2021-02-08 18:51:49
     }
     ```
 
-25. 
+25. sscanf和sprintf处理字符串。前者作用是将字符数组str中的内容以"%d"的格式写到n中，后者则相反，是将n以"%d"的格式写到str字符数组中。
+
+    ```c++
+    #include<stdio.h>
+    int main(){
+        int n;
+        char str[10] = "250";
+        sscanf(str, "%d", &n);
+        printf("%d\n", n);     //输出250
+        int m = 520;
+        sprintf(str, "%d", m);
+        printf("%s\n", str);   //输出520
+        return 0;
+    }
+    ```
+
+26. 数组可以作函数参数，参数中数组第一维不用填写长度，二维数组需要填写第二维长度，函数调用时仅需填写数组名。**数组传参时，函数内对数组的修改等同与对原数组元素的修改，这与一般值传递不同。**
+
+    ```c++
+    #include<stdio.h>
+    
+    void paraTran(int a[], int b[][3]){
+        a[0] = 3;
+        a[1] = 2;
+        a[2] = 1;
+        b[2][2] = 1;
+    }
+    
+    int main(){
+        int a[3] = {0, };
+        int b[3][3] = {0, };
+        paraTran(a, b);
+        for(int i = 0; i < 3; i++){
+            printf("a[%d] = %d\n", i, a[i]);
+            for(int j = 0; j < 3; j++){
+                printf("b[%d][%d] = %d\n", i, j, b[i][j]);
+            }
+        }
+        return 0;
+    }
+    ```
+
+    
 
