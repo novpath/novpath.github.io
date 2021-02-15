@@ -154,6 +154,7 @@ date: 2021-02-08 18:51:49
 24. 常用的string函数。
 
     ```c++
+    #include<stdio.h>
     #include<string.h>
     int main(){
         char str1[10] = "Hi";
