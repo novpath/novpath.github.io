@@ -209,5 +209,230 @@ date: 2021-02-08 18:51:49
     }
     ```
 
+27. 同时定义好几个同类型的指针变量，' * '只会结合于第一个变量名。
+
+    ```c++
+    int* p1, p2; //p1为int*型、p2为int型
+    ```
+
+28. 对于int*类型的指针变量p来说，p+1是p所指int型变量的**下一个int型变量**的地址，为4个Byte。
+
+    两个指针相减，等价于在求两个指针之间相差了几个**基类型**。
+
+29. 由于指针变量可以进行加减法，a+i等价于&a[i]，*(a+i)等价于a[i]；
+
+30. swap函数观察指针的作用
+
+    ```c++
+    void swap(int* a, int* b){
+        int temp = *a;
+        *a = *b;
+        *b = temp;
+    }
+    ```
+
+31. C++**引用**实现地址交换达到交换两个变量的效果。
+
+    ```c++
+    //无法达到效果，因为main函数传入的是地址的副本
+    void swap(int* a, int * b){
+        int* temp = a;
+        a = b;
+        b = temp;
+    } 
+    //可以达到效果,swap内对指针的修改能够返回main()
+    void swap(int* &p1, int* &p2){
+        int* temp = p1;
+        p1 = p2;
+        p2 = temp;
+    }
+    ```
+
+32. **常量不可以引用**
+
+    ```c++
+    #include<stdio.h>
     
+    void swap(int* &p1, int* &p2){
+        int* temp = p1;
+        p1 = p2;
+        p2 = temp;
+    }
+    
+    int main(){
+        int a = 0, b = 1;
+        int *p1 = &a, *p2 = &b;
+        swap(p1, p2);
+        printf("a = %d, b = %d\n", *p1, *p2);
+        return 0;
+    }
+    ```
+
+    
+
+33. 结构体的定义
+
+    ```c++
+    struct studentInfo{
+        int id;
+        char gender; //'F' or  'M'
+        char name[20];
+        char major[20];
+    }ZhangSan, stu[10];
+    //等价于
+    struct studentInfo{
+        int id;
+        char gender; //'F' or  'M'
+        char name[20];
+        char major[20];
+    }
+    studentInfo ZhangSan;
+    studentInfo stu[10];
+    ```
+
+    
+
+34. 结构体内部可以定义除自己本身外的任何数据类型，但可以定义自身类型的指针变量。
+
+    ```c++
+    struct Node{
+        int data;
+        struct Node *next;
+    }
+    //通常也可以把结构体命名为Node，之后就不用加上struct了
+    typedef struct Node{
+        int data;
+        struct Node *next;
+    }Node;
+    ```
+
+35. 访问结构体内的元素
+
+    ```c++
+    struct studentInfo{
+        int id;
+        char gender; //'F' or  'M'
+        char name[20];
+        char major[20];
+        studentInfo* next;
+    }ZhangSan, *p;
+    //访问学生张三的信息操作如下
+    ZhangSan.id
+    ZhangSan.name
+    ZhangSan.next
+    //访问p中元素的方法
+    (*p).id
+    (*p).name
+    (*p).next
+    p->id
+    p->name
+    p->next
+    ```
+
+36. 结构体的初始化与赋值
+
+    ```c++
+    #include<stdio.h>
+    #include<string.h>
+    
+    struct studentInfo{
+        int id;
+        char gender; //'F' or  'M'
+        char name[20];
+        char major[20];
+        studentInfo* next;
+    }ZhangSan, *p;
+    
+    int main(){
+        /*可以单独赋值如ZhangSan.id = 1，但字符数组除了初始化
+        外不能直接赋字符串，如ZhangSan.major = "math"*/
+    	struct studentInfo ZhangSan = {20211289, 'M', 
+    	"ZhangSan", "Material Science"};  
+    	char str[20] = {'0'};  //不可以直接赋右值ZhangSan.major
+    	strcpy(str, ZhangSan.major);
+    	printf("%s", str);
+        scanf("%d %s", &ZhangSan.id, &ZhangSan.name);//支持读入时赋值
+        printf("id = %d name = %s", ZhangSan.id, ZhangSan.name);
+    	return 0;
+    }
+    ```
+
+37. 利用生成的**构造函数**进行初始化与赋值。
+
+```c++
+struct studentInfo{
+    int id;
+    char gender;
+    //默认生成的构造函数
+    studentInfo(){}
+};
+/*-----------------------*/
+//如果要手动提供id和gender的初始化参数
+struct studentInfo{
+    int id;
+    char gender;
+    //填写如下的参数用以对结构体的内部变量赋值
+    studentInfo(int _id, char _gender){
+        //赋值
+        id = _id;
+        gender = _gender;
+    }
+}
+/*----------------------*/
+//自定义构造函数简化
+struct studentInfo{
+    int id;
+    char gender;
+    studentInfo(int _id, char _gender): id(_id), gender(_gender){}
+}
+/*----------------------*/
+//构造函数定义完毕后对结构体变量的赋值
+studentInfo stu = studentInfo(20211289, 'M');
+```
+
+**若自己重新定义了构造函数，则不能不经过初始化就定义结构体变量。**此时studentInfo(){}被自己定义的构造函数覆盖，可以把其重新加上，多个构造函数可以并存，这样更能适应不同的场合。
+
+```c++
+struct studentInfo{
+    int id;
+    char gender;
+    //用以不用初始化就定义结构体变量；
+    studentInfo(){}
+    //只初始化gender参数
+    studentInfo(char _gender){
+        gender = _gender;
+    }
+    //同时初始化所有参数
+    studentInfo(int _id, char _gender){
+        id = _id;
+        gender = _gender;
+    }
+};
+```
+
+```c++
+#include<stdio.h>
+
+struct Point{
+    int x, y;
+    Point(){}   //这样可以不经过初始化就定义pt[10]
+    Point(int _x, int _y): x(_x), y(_y) {} //用以提供x和y的初始化
+}pt[10];
+
+int main(){
+    int num = 0;
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            pt[num++] = Point(i, j); //直接使用构造函数
+        }
+    }
+    for(int k = 0; k < num; k++){
+        printf("(%d, %d)", pt[k].x, pt[k].y);
+        if((k+1) % 3 == 0)
+        printf("\n");
+    }
+    
+    return 0;
+}
+```
 
