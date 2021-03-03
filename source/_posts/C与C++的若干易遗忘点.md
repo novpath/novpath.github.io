@@ -436,3 +436,13 @@ int main(){
 }
 ```
 
+38.getline函数读入一整行。
+
+```c++
+char str[100];
+getline(cin, str);
+//如果是string容器
+string str;
+getline(cin, str);
+```
+
